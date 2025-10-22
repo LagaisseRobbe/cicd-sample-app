@@ -1,7 +1,4 @@
 node {
-    triggers {
-        githubPush()
-    }
     stage('Preparation') {
         catchError(buildResult: 'SUCCESS') {
             sh 'docker stop samplerunning'
