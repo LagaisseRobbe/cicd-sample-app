@@ -1,6 +1,7 @@
+properties([pipelineTriggers([pollSCM('* * * * *')])])
 
-
-node {
+pipeline {
+    agent any
     stage('Preparation') {
         catchError(buildResult: 'SUCCESS') {
             sh 'docker stop samplerunning'
